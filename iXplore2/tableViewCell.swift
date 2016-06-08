@@ -10,9 +10,14 @@ import UIKit
 
 class tableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -20,5 +25,12 @@ class tableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    @IBAction func starsTapped(sender: UIButton) {
+        
+    }
+    
+    
     
 }

@@ -23,27 +23,43 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nP-mU-0yT">
-                        <rect key="frame" x="103" y="37" width="45" height="45"/>
-                        <state key="normal" title="Button" image="star_black.png"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-iD-39F">
+                        <rect key="frame" x="148" y="34" width="45" height="45"/>
+                        <state key="normal" title="Button" image="greyStar.png"/>
+                        <connections>
+                            <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DiU-6D-nCV"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-Lo-qpX">
-                        <rect key="frame" x="156" y="37" width="45" height="45"/>
-                        <state key="normal" title="Button" image="star_black.png"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M13-Oa-Tax">
+                        <rect key="frame" x="201" y="34" width="45" height="45"/>
+                        <state key="normal" title="Button" image="greyStar.png"/>
+                        <connections>
+                            <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v60-ug-BQz"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1R0-P9-lJB">
-                        <rect key="frame" x="209" y="37" width="45" height="45"/>
-                        <state key="normal" title="Button" image="star_black.png"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-u8-BhH">
+                        <rect key="frame" x="257" y="34" width="45" height="45"/>
+                        <state key="normal" title="Button" image="greyStar.png"/>
+                        <connections>
+                            <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fzU-fH-Kjr"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ig-bM-FvL">
-                        <rect key="frame" x="262" y="37" width="45" height="45"/>
-                        <state key="normal" title="Button" image="star_black.png"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-Ez-T3n">
+                        <rect key="frame" x="95" y="34" width="45" height="45"/>
+                        <state key="normal" title="Button" image="greyStar.png"/>
+                        <connections>
+                            <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H1s-dr-KRS"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cellImage" destination="END-at-TMx" id="eeM-oy-OCZ"/>
+                <outlet property="cellLabel" destination="bWe-OF-IbI" id="nxJ-XX-Iqg"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star_black.png" width="75" height="75"/>
+        <image name="greyStar.png" width="2000" height="2037"/>
     </resources>
 </document>
