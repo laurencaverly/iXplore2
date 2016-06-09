@@ -27,6 +27,7 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         placeList = Place.placeList()
+        print(placeList[0])
     }
     
     
@@ -56,32 +57,44 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     
+    
+    
     //Table View Setup
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeList.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> tableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath) as! tableViewCell
         
-        let row = indexPath.row
+        let place = placeList[indexPath.row] as! Place
         
-        cell.cellLabel.text = "test"
+        cell.setupCell(place)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 88
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Places"
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 22
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let mapCenterCoordinateAfterMove = CLLocationCoordinate2D(latitude: self.placeList[indexPath.row].coordinate.latitude,longitude: self.placeList[indexPath.row].coordinate.longitude)
-        let adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMake(mapCenterCoordinateAfterMove,MKCoordinateSpanMake(0.01, 0.01)))
-        mapView.setRegion(adjustedRegion, animated: true)
+        let span = MKCoordinateSpanMake(0.075, 0.075)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: placeList[indexPath.row].coordinate.latitude, longitude : placeList[indexPath.row].coordinate.longitude) , span: span)
+        mapView.setRegion(region, animated: true)
         
-        self.mapView.setCenterCoordinate(mapCenterCoordinateAfterMove, animated: true)
-        self.mapView.region = adjustedRegion
         self.mapView.showAnnotations(placeList as! [MKAnnotation], animated: true)
     }
     

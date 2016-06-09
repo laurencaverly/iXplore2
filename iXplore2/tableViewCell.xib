@@ -23,28 +23,28 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-iD-39F">
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-iD-39F">
                         <rect key="frame" x="148" y="34" width="45" height="45"/>
                         <state key="normal" title="Button" image="greyStar.png"/>
                         <connections>
                             <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DiU-6D-nCV"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M13-Oa-Tax">
-                        <rect key="frame" x="201" y="34" width="45" height="45"/>
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M13-Oa-Tax">
+                        <rect key="frame" x="201" y="33" width="45" height="45"/>
                         <state key="normal" title="Button" image="greyStar.png"/>
                         <connections>
                             <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v60-ug-BQz"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-u8-BhH">
+                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-u8-BhH">
                         <rect key="frame" x="257" y="34" width="45" height="45"/>
                         <state key="normal" title="Button" image="greyStar.png"/>
                         <connections>
                             <action selector="starsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fzU-fH-Kjr"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-Ez-T3n">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-Ez-T3n">
                         <rect key="frame" x="95" y="34" width="45" height="45"/>
                         <state key="normal" title="Button" image="greyStar.png"/>
                         <connections>
@@ -56,6 +56,10 @@
             <connections>
                 <outlet property="cellImage" destination="END-at-TMx" id="eeM-oy-OCZ"/>
                 <outlet property="cellLabel" destination="bWe-OF-IbI" id="nxJ-XX-Iqg"/>
+                <outlet property="star1" destination="qgv-Ez-T3n" id="bLu-PE-4jN"/>
+                <outlet property="star2" destination="cVB-iD-39F" id="if4-DS-8Ym"/>
+                <outlet property="star3" destination="M13-Oa-Tax" id="xwB-cD-hwG"/>
+                <outlet property="star4" destination="icZ-u8-BhH" id="Zc6-ek-ETd"/>
             </connections>
         </tableViewCell>
     </objects>

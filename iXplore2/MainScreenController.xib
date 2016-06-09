@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="iXplore2" customModuleProvider="target">
@@ -20,18 +21,46 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sm8-0Z-WTf">
                     <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="303" width="400" height="497"/>
-                    </variation>
                 </tableView>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pM3-dI-SvT">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
-                    </variation>
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pM3-dI-SvT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9j6-Ss-gyL"/>
+                <constraint firstAttribute="centerY" secondItem="pM3-dI-SvT" secondAttribute="bottom" id="B8R-55-n0D"/>
+                <constraint firstItem="Sm8-0Z-WTf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="e1f-Wk-LEu"/>
+                <constraint firstAttribute="trailing" secondItem="Sm8-0Z-WTf" secondAttribute="trailing" id="tdu-7M-luk"/>
+                <constraint firstItem="Sm8-0Z-WTf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vrd-wz-rX1"/>
+                <constraint firstAttribute="trailing" secondItem="pM3-dI-SvT" secondAttribute="trailing" id="xGw-FD-BgI"/>
+                <constraint firstAttribute="bottom" secondItem="Sm8-0Z-WTf" secondAttribute="bottom" id="ysO-7d-RBW"/>
+                <constraint firstItem="pM3-dI-SvT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zyz-rb-20f"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9j6-Ss-gyL"/>
+                    <exclude reference="B8R-55-n0D"/>
+                    <exclude reference="xGw-FD-BgI"/>
+                    <exclude reference="zyz-rb-20f"/>
+                    <exclude reference="e1f-Wk-LEu"/>
+                    <exclude reference="tdu-7M-luk"/>
+                    <exclude reference="vrd-wz-rX1"/>
+                    <exclude reference="ysO-7d-RBW"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="9j6-Ss-gyL"/>
+                    <include reference="B8R-55-n0D"/>
+                    <include reference="xGw-FD-BgI"/>
+                    <include reference="zyz-rb-20f"/>
+                    <include reference="e1f-Wk-LEu"/>
+                    <include reference="tdu-7M-luk"/>
+                    <include reference="vrd-wz-rX1"/>
+                    <include reference="ysO-7d-RBW"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

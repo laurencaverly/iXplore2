@@ -21,7 +21,6 @@
 		DCDE2A3C1D08AFE40049D38B /* goldStar.png in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2A3B1D08AFE40049D38B /* goldStar.png */; };
 		DCDE2A3E1D08B02B0049D38B /* greyStar.png in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2A3D1D08B02B0049D38B /* greyStar.png */; };
 		DCDE2A401D08BACF0049D38B /* ale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2A3F1D08BACF0049D38B /* ale.jpg */; };
-		DCDE2A421D08BDB40049D38B /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2A411D08BDB40049D38B /* URLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		DCDE2A3B1D08AFE40049D38B /* goldStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goldStar.png; path = ../../../../Downloads/goldStar.png; sourceTree = "<group>"; };
 		DCDE2A3D1D08B02B0049D38B /* greyStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greyStar.png; path = ../../../../Downloads/greyStar.png; sourceTree = "<group>"; };
 		DCDE2A3F1D08BACF0049D38B /* ale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ale.jpg; path = ../../../../Downloads/ale.jpg; sourceTree = "<group>"; };
-		DCDE2A411D08BDB40049D38B /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 				DCDE2A151D0895F50049D38B /* Assets.xcassets */,
 				DCDE2A171D0895F50049D38B /* LaunchScreen.storyboard */,
 				DCDE2A1A1D0895F50049D38B /* Info.plist */,
-				DCDE2A411D08BDB40049D38B /* URLExtension.swift */,
 			);
 			path = iXplore2;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCDE2A421D08BDB40049D38B /* URLExtension.swift in Sources */,
 				DCDE2A271D08A0EC0049D38B /* Place.swift in Sources */,
 				DCDE2A341D08AB9D0049D38B /* tableViewCell.swift in Sources */,
 				DCDE2A221D0896EE0049D38B /* MainScreenController.swift in Sources */,
