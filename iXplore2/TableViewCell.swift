@@ -69,10 +69,6 @@ class tableViewCell: UITableViewCell {
         
     }
     
-    func setLabelText(text: String) {
-        cellLabel.text = text
-    }
-    
     
 }
 
