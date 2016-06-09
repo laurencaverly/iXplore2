@@ -45,8 +45,26 @@ class tableViewCell: UITableViewCell {
         
         let tag = sender.tag
         
-        if tag == 0 {
-            
+        if tag == 1 {
+            star1.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star2.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+            star3.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+            star4.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+        } else if tag == 2 {
+            star1.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star2.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star3.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+            star4.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+        } else if tag == 3 {
+            star1.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star2.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star3.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star4.setImage(UIImage(named: "greyStar.png"), forState: UIControlState.Normal)
+        } else if tag == 4 {
+            star1.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star2.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star3.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
+            star4.setImage(UIImage(named: "goldStar.png"), forState: UIControlState.Normal)
         }
         
     }
