@@ -15,14 +15,13 @@ class Place: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var imageURL: String
     var descripthing: String?
-    var date: NSDate?
-    
-    
+    var date: String?
     
     override init() {
         title = ""
         coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
         imageURL = ""
+        
     }
     
     class func placeList() -> [Place] {

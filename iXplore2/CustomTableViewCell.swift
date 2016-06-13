@@ -25,9 +25,11 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(place: Place) {
+    func setupCell(place: Place, date: String) {
         let placeTitle = place.title
         cellTitle.text = placeTitle
+        
+        cellDate.text = date
         
         let placeImage = place.imageURL
         cellImage.image = UIImage(named: placeImage)
