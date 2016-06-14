@@ -35,6 +35,10 @@
 		DCDE2B051D1056A90049D38B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2B031D1056A90049D38B /* LoginViewController.xib */; };
 		DCDE2B121D1059300049D38B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B101D1059300049D38B /* RegistrationViewController.swift */; };
 		DCDE2B131D1059300049D38B /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2B111D1059300049D38B /* RegistrationViewController.xib */; };
+		DCDE2B161D105FDE0049D38B /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */; };
+		DCDE2B171D105FDE0049D38B /* NewPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */; };
+		DCDE2B191D1085DF0049D38B /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B181D1085DF0049D38B /* PlacesController.swift */; };
+		DCDE2B1D1D1098720049D38B /* UserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B1C1D1098720049D38B /* UserPersistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		DCDE2B031D1056A90049D38B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DCDE2B101D1059300049D38B /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DCDE2B111D1059300049D38B /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPlaceViewController.xib; sourceTree = "<group>"; };
+		DCDE2B181D1085DF0049D38B /* PlacesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
+		DCDE2B1C1D1098720049D38B /* UserPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,9 @@
 				DCDE2A211D0896EE0049D38B /* MainScreenController.xib */,
 				DCDE2A201D0896EE0049D38B /* MainScreenController.swift */,
 				DCDE2A261D08A0EC0049D38B /* Place.swift */,
+				DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */,
+				DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */,
+				DCDE2B181D1085DF0049D38B /* PlacesController.swift */,
 			);
 			name = MainAppFiles;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 				DCDE2B031D1056A90049D38B /* LoginViewController.xib */,
 				DCDE2B101D1059300049D38B /* RegistrationViewController.swift */,
 				DCDE2B111D1059300049D38B /* RegistrationViewController.xib */,
+				DCDE2B1C1D1098720049D38B /* UserPersistence.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -239,6 +251,7 @@
 			files = (
 				DCDE2AA61D0EB8410049D38B /* workshop17.jpg in Resources */,
 				DCDE2A401D08BACF0049D38B /* ale.jpg in Resources */,
+				DCDE2B171D105FDE0049D38B /* NewPlaceViewController.xib in Resources */,
 				DCDE2A2A1D08A38E0049D38B /* neverathome.jpg in Resources */,
 				DCDE2B051D1056A90049D38B /* LoginViewController.xib in Resources */,
 				DCDE2A3C1D08AFE40049D38B /* goldStar.png in Resources */,
@@ -269,11 +282,14 @@
 			files = (
 				DCDE2B041D1056A90049D38B /* LoginViewController.swift in Sources */,
 				DCDE2A271D08A0EC0049D38B /* Place.swift in Sources */,
+				DCDE2B1D1D1098720049D38B /* UserPersistence.swift in Sources */,
 				DCDE2A9B1D0EB36B0049D38B /* CustomTableViewCell.swift in Sources */,
 				DCDE2AFD1D1053960049D38B /* Onboarding.swift in Sources */,
 				DCDE2B121D1059300049D38B /* RegistrationViewController.swift in Sources */,
+				DCDE2B161D105FDE0049D38B /* NewPlaceViewController.swift in Sources */,
 				DCDE2A221D0896EE0049D38B /* MainScreenController.swift in Sources */,
 				DCDE2A0F1D0895F50049D38B /* AppDelegate.swift in Sources */,
+				DCDE2B191D1085DF0049D38B /* PlacesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

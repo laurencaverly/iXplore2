@@ -25,13 +25,15 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
         self.mapViewSetup()
         self.tableViewSetup()
         
         placeList = Place.placeList()
         
         self.mapView.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addTapped))
         
     }
     
@@ -49,6 +51,7 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         self.mapView.showsPointsOfInterest = true
         self.mapView.addAnnotations(placeList)
         
+        
     }
     
     
@@ -65,9 +68,32 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
   //  Map View Setup
-
-    
-    
+    func mapView(mapView: MKMapView,
+                 viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let pin = annotation as! Place
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+            
+            if !(pin.favorite) {
+                pinView?.pinTintColor = UIColor.redColor()
+            } else {
+                pinView?.pinTintColor = UIColor.yellowColor()
+            }
+        }
+        else {
+            
+            pinView!.annotation = annotation
+        }
+        
+        return pinView!
+    }
     
     
     
@@ -126,6 +152,7 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         return true
     }
     
+    
     // This is a generic implementation of the table data source method for adding row actions.
     // Adapt it to match your needs.
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
@@ -137,10 +164,9 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
             
             self.placeList.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            self.mapView.removeAnnotation(self.placeList[indexPath.row])
             
             tableView.endUpdates()
-            
+            self.mapView.removeAnnotation(self.placeList[indexPath.row])
         }
         delete.backgroundColor = UIColor.redColor()
         
@@ -151,6 +177,9 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
             tableView.beginUpdates()
             
             self.placeList[indexPath.row].favorite = true
+            print(self.placeList[indexPath.row].favorite)
+            
+            
             tableView.endUpdates()
             
         }
@@ -158,6 +187,15 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         return [delete, favorite]
+    }
+    
+    
+    
+    //add modal view
+    @IBAction func addTapped() {
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.modalPresentationStyle = .CurrentContext
+        self.presentViewController(NewPlaceViewController(), animated: true, completion: nil)
     }
     
     

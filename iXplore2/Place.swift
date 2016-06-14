@@ -14,7 +14,7 @@ class Place: MKPointAnnotation {
 //    var title: String?
 //    var coordinate: CLLocationCoordinate2D
     var imageURL: String
-    var descripthing: String?
+    var describer: String?
     var favorite: Bool
     
     override init() {
