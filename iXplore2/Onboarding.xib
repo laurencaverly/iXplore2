@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Onboarding" customModule="iXplore2" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ixplore.png" translatesAutoresizingMaskIntoConstraints="NO" id="sLO-Lk-5Yb">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    </variation>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naE-70-AKE">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.99936922390000005" blue="0.9987392195" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="yOJ-fj-Ywr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <state key="normal" title="Log In"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="yOJ-fj-Ywr"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="yOJ-fj-Ywr"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="L7D-Zw-Qcm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfL-fJ-9L8">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.99936922390000005" blue="0.9987392195" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="pvR-Ec-rdl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <state key="normal" title="Register"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pvR-Ec-rdl"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="pvR-Ec-rdl"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="zcA-X7-qym"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="naE-70-AKE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="215" id="6be-ak-vI3"/>
+                <constraint firstItem="BfL-fJ-9L8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="275" id="kR7-Oi-YF2"/>
+                <constraint firstItem="BfL-fJ-9L8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rHd-B6-teP"/>
+                <constraint firstItem="naE-70-AKE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zme-pE-vzt"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="sLO-Lk-5Yb"/>
+                    <exclude reference="naE-70-AKE"/>
+                    <exclude reference="BfL-fJ-9L8"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="6be-ak-vI3"/>
+                    <exclude reference="zme-pE-vzt"/>
+                    <exclude reference="kR7-Oi-YF2"/>
+                    <exclude reference="rHd-B6-teP"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="sLO-Lk-5Yb"/>
+                    <include reference="naE-70-AKE"/>
+                    <include reference="BfL-fJ-9L8"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="6be-ak-vI3"/>
+                    <include reference="zme-pE-vzt"/>
+                    <include reference="kR7-Oi-YF2"/>
+                    <include reference="rHd-B6-teP"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="ixplore.png" width="400" height="400"/>
+    </resources>
+</document>

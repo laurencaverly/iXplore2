@@ -12,8 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var authNavigationController:UINavigationController?
     var navigationController: UINavigationController?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,13 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.makeKeyAndVisible()
         
+        let onboardingController = Onboarding(nibName: "Onboarding", bundle: nil)
+        authNavigationController = UINavigationController(rootViewController: onboardingController)
+        
         let mainScreenController = MainScreenController(nibName: "MainScreenController", bundle: nil)
         navigationController = UINavigationController(rootViewController: mainScreenController)
         
-        self.window?.rootViewController = self.navigationController
+        self.window?.rootViewController = self.authNavigationController
         
         return true
     
+    }
+    
+    func navigateToMainScreenController() {
+        self.window?.rootViewController = self.navigationController
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -14,19 +14,14 @@ class CustomTableViewCell: UITableViewCell {
 //    @IBOutlet weak var cellTitle: UILabel!
 //    @IBOutlet weak var cellDate: UILabel!
     
+    var favoriteStar:UIImageView = UIImageView(frame: CGRectMake(75, 75, 10, 10))
     var cellImage:UIImageView = UIImageView(frame: CGRectMake(0, 0, 88, 88))
     var cellTitle:UILabel = UILabel(frame: CGRectMake(100, 7, 200, 30))
     var cellDate:UILabel = UILabel(frame: CGRectMake(100, 50, 200, 30))
     
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "CustomTableViewCell")
-        
-        cellImage.image = UIImage(named: "goldStar.png")
-        
-        cellTitle.text = "hello it's me"
-        cellTitle.textColor = UIColor.blackColor()
-        
-        cellDate.text = "hello it's me"
         
         self.addSubview(cellTitle)
         self.addSubview(cellImage)

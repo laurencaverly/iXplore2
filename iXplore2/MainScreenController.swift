@@ -14,8 +14,6 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     
-    var deletePlaceIndexPath: NSIndexPath? = nil
-    
     var placeList = [Place]()
     
 //    var customPin = CustomAnnotation()
@@ -132,14 +130,29 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     // Adapt it to match your needs.
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        let delete = UITableViewRowAction(style: .Normal, title: "Delete") { delete, index in
+        let delete = UITableViewRowAction(style: .Destructive, title: "Delete") { delete, index in
             print("Delete tapped")
+            
+            tableView.beginUpdates()
+            
+            self.placeList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            self.mapView.removeAnnotation(self.placeList[indexPath.row])
+            
+            tableView.endUpdates()
+            
         }
         delete.backgroundColor = UIColor.redColor()
-        deletePlaceIndexPath = indexPath
+        
         
         let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { favorite, index in
             print("Favorite tapped")
+            
+            tableView.beginUpdates()
+            
+            self.placeList[indexPath.row].favorite = true
+            tableView.endUpdates()
+            
         }
         favorite.backgroundColor = UIColor.orangeColor()
         

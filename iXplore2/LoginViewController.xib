@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="iXplore2" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordTextField" destination="jzx-CN-dzL" id="KBp-Sf-IpB"/>
+                <outlet property="usernameTextField" destination="xs2-9k-e5d" id="Q3t-40-AEZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ixplore.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-H4-1xC">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    </variation>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrS-rF-ogX">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="BW9-du-ktk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <state key="normal" title="Log In"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="BW9-du-ktk"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="BW9-du-ktk"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="uSz-M9-Kck"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-CN-dzL">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="OZh-9l-2br"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="OZh-9l-2br"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="OZh-9l-2br"/>
+                        </mask>
+                    </variation>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-9k-e5d">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="xsQ-5j-Hhq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="xsQ-5j-Hhq"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="xsQ-5j-Hhq"/>
+                        </mask>
+                    </variation>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xs2-9k-e5d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QgF-Q9-cLX"/>
+                <constraint firstItem="HrS-rF-ogX" firstAttribute="top" secondItem="jzx-CN-dzL" secondAttribute="bottom" constant="30" id="VoY-Ag-QEj"/>
+                <constraint firstItem="xs2-9k-e5d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="h6C-tV-uwO"/>
+                <constraint firstItem="jzx-CN-dzL" firstAttribute="top" secondItem="xs2-9k-e5d" secondAttribute="bottom" constant="30" id="op2-kC-neM"/>
+                <constraint firstItem="HrS-rF-ogX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rzv-66-RW5"/>
+                <constraint firstItem="jzx-CN-dzL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sX0-Rr-G7l"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Qpp-H4-1xC"/>
+                    <exclude reference="HrS-rF-ogX"/>
+                    <exclude reference="jzx-CN-dzL"/>
+                    <exclude reference="xs2-9k-e5d"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="QgF-Q9-cLX"/>
+                    <exclude reference="h6C-tV-uwO"/>
+                    <exclude reference="op2-kC-neM"/>
+                    <exclude reference="sX0-Rr-G7l"/>
+                    <exclude reference="VoY-Ag-QEj"/>
+                    <exclude reference="rzv-66-RW5"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Qpp-H4-1xC"/>
+                    <include reference="HrS-rF-ogX"/>
+                    <include reference="jzx-CN-dzL"/>
+                    <include reference="xs2-9k-e5d"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="QgF-Q9-cLX"/>
+                    <include reference="h6C-tV-uwO"/>
+                    <include reference="op2-kC-neM"/>
+                    <include reference="sX0-Rr-G7l"/>
+                    <include reference="VoY-Ag-QEj"/>
+                    <include reference="rzv-66-RW5"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="ixplore.png" width="400" height="400"/>
+    </resources>
+</document>
