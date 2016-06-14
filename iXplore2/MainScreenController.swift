@@ -17,7 +17,6 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     var deletePlaceIndexPath: NSIndexPath? = nil
     
     var placeList = [Place]()
-    var favePlaces = [Place]()
     
 //    var customPin = CustomAnnotation()
 
@@ -36,11 +35,6 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.mapView.delegate = self
         
-//        let annotation = ColorPointAnnotation(pinColor: UIColor.blueColor())
-//        annotation.coordinate = CLLocationCoordinate2DMake(-33.905289, 18.430412)
-//        annotation.title = "title"
-//        annotation.subtitle = "subtitle"
-//        self.mapView.addAnnotation(annotation)
     }
     
     
@@ -65,32 +59,15 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.tableView.registerNib(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        self.tableView.registerClass(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
+        
     }
     
     
     
     
   //  Map View Setup
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-//        if annotation is MKUserLocation {
-//            return nil
-//        }
-//        
-//        let reuseId = "pin"
-//        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-//        if pinView == nil {
-//            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//            
-//            let colorPointAnnotation = annotation as! ColorPointAnnotation
-//            pinView?.pinTintColor = colorPointAnnotation.pinColor
-//        }
-//        else {
-//            pinView?.annotation = annotation
-//        }
-//        
-//        return pinView
-//    }
+
     
     
     
@@ -108,6 +85,7 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         let place = placeList[indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomTableViewCell", forIndexPath: indexPath) as! CustomTableViewCell
+      
        
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
@@ -141,51 +119,78 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.mapView.showAnnotations(placeList, animated: true)
         self.mapView.selectAnnotation(placeList[indexPath.row], animated: true)
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
-    //Swipe to delete
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            deletePlaceIndexPath = indexPath
-            let placeToDelete = placeList[indexPath.row]
-            confirmDelete(placeToDelete.title!)
-
+    // This is a generic implementation of the table data source method for adding row actions.
+    // Adapt it to match your needs.
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .Normal, title: "Delete") { delete, index in
+            print("Delete tapped")
         }
-    }
-
-    func confirmDelete(place: String) {
-        let alert = UIAlertController(title: "Delete Place", message: "Are you sure you want to permanently delete \(place)?", preferredStyle: .ActionSheet)
+        delete.backgroundColor = UIColor.redColor()
+        deletePlaceIndexPath = indexPath
         
-        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlace)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeletePlace)
-        
-        alert.addAction(DeleteAction)
-        alert.addAction(CancelAction)
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func handleDeletePlace(alertAction: UIAlertAction!) -> Void {
-        if let indexPath = deletePlaceIndexPath {
-            tableView.beginUpdates()
-            
-            placeList.removeAtIndex(indexPath.row)
-            
-            // Note that indexPath is wrapped in an array:  [indexPath]
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            
-            deletePlaceIndexPath = nil
-            
-            tableView.endUpdates()
+        let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { favorite, index in
+            print("Favorite tapped")
         }
+        favorite.backgroundColor = UIColor.orangeColor()
+        
+        
+        return [delete, favorite]
     }
     
-    func cancelDeletePlace(alertAction: UIAlertAction!) {
-        deletePlaceIndexPath = nil
-    }
+    
+    
+    //Swipe to delete functionality
+    
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .Delete {
+//            deletePlaceIndexPath = indexPath
+//            let placeToDelete = placeList[indexPath.row]
+//            confirmDelete(placeToDelete.title!)
+//
+//        }
+//    }
+//
+//    func confirmDelete(place: String) {
+//        let alert = UIAlertController(title: "Delete Place", message: "Are you sure you want to permanently delete \(place)?", preferredStyle: .ActionSheet)
+//        
+//        let DeleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: handleDeletePlace)
+//        let CancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: cancelDeletePlace)
+//        
+//        alert.addAction(DeleteAction)
+//        alert.addAction(CancelAction)
+//        
+//        self.presentViewController(alert, animated: true, completion: nil)
+//    }
+//    
+//    func handleDeletePlace(alertAction: UIAlertAction!) -> Void {
+//        if let indexPath = deletePlaceIndexPath {
+//            tableView.beginUpdates()
+//            
+//            placeList.removeAtIndex(indexPath.row)
+//            
+//            // Note that indexPath is wrapped in an array:  [indexPath]
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//            
+//            deletePlaceIndexPath = nil
+//            
+//            tableView.endUpdates()
+//        }
+//    }
+//    
+//    func cancelDeletePlace(alertAction: UIAlertAction!) {
+//        deletePlaceIndexPath = nil
+//    }
+    
+    
     
 }

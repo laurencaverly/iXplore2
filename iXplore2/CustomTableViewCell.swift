@@ -10,14 +10,37 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var cellTitle: UILabel!
-    @IBOutlet weak var cellDate: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+//    @IBOutlet weak var cellImage: UIImageView!
+//    @IBOutlet weak var cellTitle: UILabel!
+//    @IBOutlet weak var cellDate: UILabel!
+    
+    var cellImage:UIImageView = UIImageView(frame: CGRectMake(0, 0, 88, 88))
+    var cellTitle:UILabel = UILabel(frame: CGRectMake(100, 7, 200, 30))
+    var cellDate:UILabel = UILabel(frame: CGRectMake(100, 50, 200, 30))
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "CustomTableViewCell")
+        
+        cellImage.image = UIImage(named: "goldStar.png")
+        
+        cellTitle.text = "hello it's me"
+        cellTitle.textColor = UIColor.blackColor()
+        
+        cellDate.text = "hello it's me"
+        
+        self.addSubview(cellTitle)
+        self.addSubview(cellImage)
+        self.addSubview(cellDate)
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
