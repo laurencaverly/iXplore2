@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -17,19 +17,30 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     var deletePlaceIndexPath: NSIndexPath? = nil
     
     var placeList = [Place]()
+    var favePlaces = [Place]()
+    
+//    var customPin = CustomAnnotation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
         // Do any additional setup after loading the view.
+        
+        
         self.navigationController?.navigationBarHidden = true
         self.mapViewSetup()
         self.tableViewSetup()
         
-        
         placeList = Place.placeList()
-        print(placeList[0])
+        
+        self.mapView.delegate = self
+        
+//        let annotation = ColorPointAnnotation(pinColor: UIColor.blueColor())
+//        annotation.coordinate = CLLocationCoordinate2DMake(-33.905289, 18.430412)
+//        annotation.title = "title"
+//        annotation.subtitle = "subtitle"
+//        self.mapView.addAnnotation(annotation)
     }
     
     
@@ -42,10 +53,10 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func mapViewSetup() {
-        
-        self.mapView.mapType = .HybridFlyover
+        self.mapView.mapType = .Hybrid
         self.mapView.showsPointsOfInterest = true
         self.mapView.addAnnotations(placeList)
+        
     }
     
     
@@ -56,6 +67,32 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.registerNib(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
     }
+    
+    
+    
+    
+  //  Map View Setup
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        if annotation is MKUserLocation {
+//            return nil
+//        }
+//        
+//        let reuseId = "pin"
+//        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+//        if pinView == nil {
+//            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//            
+//            let colorPointAnnotation = annotation as! ColorPointAnnotation
+//            pinView?.pinTintColor = colorPointAnnotation.pinColor
+//        }
+//        else {
+//            pinView?.annotation = annotation
+//        }
+//        
+//        return pinView
+//    }
+    
+    
     
     
     
@@ -98,15 +135,19 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let span = MKCoordinateSpanMake(0.075, 0.075)
-        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: placeList[indexPath.row].coordinate.latitude, longitude : placeList[indexPath.row].coordinate.longitude) , span: span)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: placeList[indexPath.row].coordinate.latitude, longitude : placeList[indexPath.row].coordinate.longitude) , span: MKCoordinateSpanMake(0.015, 0.015))
         mapView.setRegion(region, animated: true)
         
         self.mapView.showAnnotations(placeList, animated: true)
+        self.mapView.selectAnnotation(placeList[indexPath.row], animated: true)
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    
+    
+    
+    //Swipe to delete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             deletePlaceIndexPath = indexPath

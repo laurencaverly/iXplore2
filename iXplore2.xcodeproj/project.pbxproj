@@ -29,6 +29,8 @@
 		DCDE2AAA1D0EB9870049D38B /* beerhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2AA71D0EB9870049D38B /* beerhouse.jpg */; };
 		DCDE2AAB1D0EB9870049D38B /* capetownstadium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2AA81D0EB9870049D38B /* capetownstadium.jpg */; };
 		DCDE2AAC1D0EB9870049D38B /* uct.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2AA91D0EB9870049D38B /* uct.jpg */; };
+		DCDE2ACE1D0EEC840049D38B /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2ACD1D0EEC840049D38B /* CustomAnnotation.swift */; };
+		DCDE2AD01D0FDC950049D38B /* ColorPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2ACF1D0FDC950049D38B /* ColorPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		DCDE2AA71D0EB9870049D38B /* beerhouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beerhouse.jpg; path = ../../../../Downloads/beerhouse.jpg; sourceTree = "<group>"; };
 		DCDE2AA81D0EB9870049D38B /* capetownstadium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = capetownstadium.jpg; path = ../../../../Downloads/capetownstadium.jpg; sourceTree = "<group>"; };
 		DCDE2AA91D0EB9870049D38B /* uct.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = uct.jpg; path = ../../../../Downloads/uct.jpg; sourceTree = "<group>"; };
+		DCDE2ACD1D0EEC840049D38B /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		DCDE2ACF1D0FDC950049D38B /* ColorPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				DCDE2A151D0895F50049D38B /* Assets.xcassets */,
 				DCDE2A171D0895F50049D38B /* LaunchScreen.storyboard */,
 				DCDE2A1A1D0895F50049D38B /* Info.plist */,
+				DCDE2ACD1D0EEC840049D38B /* CustomAnnotation.swift */,
+				DCDE2ACF1D0FDC950049D38B /* ColorPointAnnotation.swift */,
 			);
 			path = iXplore2;
 			sourceTree = "<group>";
@@ -223,7 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDE2A271D08A0EC0049D38B /* Place.swift in Sources */,
+				DCDE2AD01D0FDC950049D38B /* ColorPointAnnotation.swift in Sources */,
 				DCDE2A9B1D0EB36B0049D38B /* CustomTableViewCell.swift in Sources */,
+				DCDE2ACE1D0EEC840049D38B /* CustomAnnotation.swift in Sources */,
 				DCDE2A221D0896EE0049D38B /* MainScreenController.swift in Sources */,
 				DCDE2A0F1D0895F50049D38B /* AppDelegate.swift in Sources */,
 			);

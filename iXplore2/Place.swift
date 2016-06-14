@@ -9,19 +9,19 @@
 import Foundation
 import MapKit
 
-class Place: NSObject, MKAnnotation {
+class Place: MKPointAnnotation {
     
-    var title: String?
-    var coordinate: CLLocationCoordinate2D
+//    var title: String?
+//    var coordinate: CLLocationCoordinate2D
     var imageURL: String
     var descripthing: String?
-    var date: String?
+    var favorite: Bool
     
     override init() {
-        title = ""
-        coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
+//        self.title = ""
+//        self.coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
         imageURL = ""
-        
+        favorite = false
     }
     
     class func placeList() -> [Place] {
@@ -30,11 +30,13 @@ class Place: NSObject, MKAnnotation {
         place1.title = "never@home"
         place1.coordinate = CLLocationCoordinate2D(latitude: -33.907861, longitude: 18.409094)
         place1.imageURL = "neverathome.jpg"
+        place1.favorite = true
         
         let place2 = Place()
         place2.title = "Lion's Head"
         place2.coordinate = CLLocationCoordinate2D(latitude: -33.935021, longitude: 18.389108)
         place2.imageURL = "LionsHead.jpg"
+        place2.favorite = true
         
         let place3 = Place()
         place3.title = "somewhere else"
@@ -45,11 +47,13 @@ class Place: NSObject, MKAnnotation {
         place4.title = "Truth Coffee"
         place4.coordinate = CLLocationCoordinate2D(latitude: -33.917536, longitude: 18.419633)
         place4.imageURL = "truthcoffee.jpg"
+        place4.favorite = true
         
         let place5 = Place()
         place5.title = "Fork"
         place5.coordinate = CLLocationCoordinate2D(latitude: -33.922234, longitude: 18.419240)
         place5.imageURL = "fork.jpg"
+        place5.favorite = true
         
         let place6 = Place()
         place6.title = "Workshop 17"
@@ -60,6 +64,7 @@ class Place: NSObject, MKAnnotation {
         place7.title = "Old Biscuit Mill"
         place7.coordinate = CLLocationCoordinate2D(latitude: -33.927540, longitude: 18.457579)
         place7.imageURL = "oldbiscuitmill.jpg"
+        place7.favorite = true
         
         let place8 = Place()
         place8.title = "Cape Town Stadium"
