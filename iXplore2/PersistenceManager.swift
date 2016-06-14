@@ -1,5 +1,5 @@
 //
-//  UserPersistence.swift
+//  PersistenceManager.swift
 //  iXplore2
 //
 //  Created by Lauren Caverly on 6/14/16.
@@ -7,39 +7,7 @@
 //
 
 import Foundation
-
-
-class User: NSObject, NSCoding {
-    
-    var email:String?
-    
-    var password:String?
-    
-    required init(email:String?, password:String?) {
-        self.email = email
-        self.password = password
-        
-    }
-    
-    // MARK: - NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.email, forKey: "email")
-        aCoder.encodeObject(self.password, forKey: "password")
-        
-        
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        
-        let email = aDecoder.decodeObjectForKey("email") as? String
-        let password = aDecoder.decodeObjectForKey("password") as? String
-        
-        self.init(email:email, password: password)
-        
-    }
-}
-
-
+import UIKit
 
 class PersistenceManager {
     

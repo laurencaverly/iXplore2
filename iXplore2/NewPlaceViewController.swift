@@ -14,6 +14,7 @@ class NewPlaceViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +22,8 @@ class NewPlaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func backButtonTapped(sender: UIButton) {
+    @IBAction func doneButtonTapped(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
 

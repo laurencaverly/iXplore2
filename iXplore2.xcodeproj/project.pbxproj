@@ -38,7 +38,9 @@
 		DCDE2B161D105FDE0049D38B /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */; };
 		DCDE2B171D105FDE0049D38B /* NewPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */; };
 		DCDE2B191D1085DF0049D38B /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B181D1085DF0049D38B /* PlacesController.swift */; };
-		DCDE2B1D1D1098720049D38B /* UserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B1C1D1098720049D38B /* UserPersistence.swift */; };
+		DCDE2B1F1D10A36B0049D38B /* PlacePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B1E1D10A36B0049D38B /* PlacePersistence.swift */; };
+		DCDE2B211D10A3AA0049D38B /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B201D10A3AA0049D38B /* PersistenceManager.swift */; };
+		DCDE2B231D10A5AA0049D38B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE2B221D10A5AA0049D38B /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +77,9 @@
 		DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPlaceViewController.xib; sourceTree = "<group>"; };
 		DCDE2B181D1085DF0049D38B /* PlacesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
-		DCDE2B1C1D1098720049D38B /* UserPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistence.swift; sourceTree = "<group>"; };
+		DCDE2B1E1D10A36B0049D38B /* PlacePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacePersistence.swift; sourceTree = "<group>"; };
+		DCDE2B201D10A3AA0049D38B /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		DCDE2B221D10A5AA0049D38B /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DCDE2A0E1D0895F50049D38B /* AppDelegate.swift */,
+				DCDE2B201D10A3AA0049D38B /* PersistenceManager.swift */,
 				DCDE2B011D1056920049D38B /* Authorization */,
 				DCDE2AFA1D1053680049D38B /* MainAppFiles */,
 				DCDE2A361D08ABAA0049D38B /* CustomCell */,
@@ -168,6 +173,7 @@
 				DCDE2B141D105FDE0049D38B /* NewPlaceViewController.swift */,
 				DCDE2B151D105FDE0049D38B /* NewPlaceViewController.xib */,
 				DCDE2B181D1085DF0049D38B /* PlacesController.swift */,
+				DCDE2B1E1D10A36B0049D38B /* PlacePersistence.swift */,
 			);
 			name = MainAppFiles;
 			sourceTree = "<group>";
@@ -181,7 +187,7 @@
 				DCDE2B031D1056A90049D38B /* LoginViewController.xib */,
 				DCDE2B101D1059300049D38B /* RegistrationViewController.swift */,
 				DCDE2B111D1059300049D38B /* RegistrationViewController.xib */,
-				DCDE2B1C1D1098720049D38B /* UserPersistence.swift */,
+				DCDE2B221D10A5AA0049D38B /* UserController.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -282,11 +288,13 @@
 			files = (
 				DCDE2B041D1056A90049D38B /* LoginViewController.swift in Sources */,
 				DCDE2A271D08A0EC0049D38B /* Place.swift in Sources */,
-				DCDE2B1D1D1098720049D38B /* UserPersistence.swift in Sources */,
+				DCDE2B211D10A3AA0049D38B /* PersistenceManager.swift in Sources */,
 				DCDE2A9B1D0EB36B0049D38B /* CustomTableViewCell.swift in Sources */,
+				DCDE2B231D10A5AA0049D38B /* UserController.swift in Sources */,
 				DCDE2AFD1D1053960049D38B /* Onboarding.swift in Sources */,
 				DCDE2B121D1059300049D38B /* RegistrationViewController.swift in Sources */,
 				DCDE2B161D105FDE0049D38B /* NewPlaceViewController.swift in Sources */,
+				DCDE2B1F1D10A36B0049D38B /* PlacePersistence.swift in Sources */,
 				DCDE2A221D0896EE0049D38B /* MainScreenController.swift in Sources */,
 				DCDE2A0F1D0895F50049D38B /* AppDelegate.swift in Sources */,
 				DCDE2B191D1085DF0049D38B /* PlacesController.swift in Sources */,

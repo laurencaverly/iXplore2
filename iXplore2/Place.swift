@@ -16,12 +16,29 @@ class Place: MKPointAnnotation {
     var imageURL: String
     var describer: String?
     var favorite: Bool
+    var date: NSDate?
     
     override init() {
 //        self.title = ""
 //        self.coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
         imageURL = ""
         favorite = false
+    }
+    
+    // MARK: - NSCoding
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.title, forKey: "title")
+        aCoder.encodeObject(self.coordinate as! AnyObject, forKey: "coordinate")
+        aCoder.encodeObject(self.date, forKey: "date")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        
+//        let email = aDecoder.decodeObjectForKey("email") as? String
+//        let password = aDecoder.decodeObjectForKey("password") as? String
+//        
+//        self.init(email:email, password: password)
+        
     }
     
     class func placeList() -> [Place] {

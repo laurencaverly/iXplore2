@@ -16,13 +16,14 @@ class LoginViewController: UIViewController {
     var username: String?
     var password: String?
     
+    let oldUsers = PersistenceManager.loadObject("user.archive")
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        username = usernameTextField.text
-        password = passwordTextField.text
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +35,12 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(sender: UIButton) {
         print("Log In button tapped")
         
-            if username != nil && password != nil {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
         
-            let msc = MainScreenController(nibName: "MainScreenController", bundle: nil)
-            self.navigationController?.pushViewController(msc, animated: true)
+        let user = User(username: username, password: password)
         
-            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-            appDelegate.navigateToMainScreenController()
-        }
+        for object in oldUsers as
     }
     
 

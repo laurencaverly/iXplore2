@@ -17,12 +17,12 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftz-Qf-lwr">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" title="Back"/>
+                    <state key="normal" title="Done"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="56" y="48" width="46" height="30"/>
+                        <rect key="frame" x="177" y="197" width="46" height="30"/>
                     </variation>
                     <connections>
-                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="5CH-S4-35s"/>
+                        <action selector="doneButtonTapped:" destination="-1" eventType="touchUpInside" id="OPh-G2-R8G"/>
                     </connections>
                 </button>
             </subviews>
