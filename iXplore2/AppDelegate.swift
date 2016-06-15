@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     var authNavigationController:UINavigationController?
     var navigationController: UINavigationController?
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var delegate: CLLocationManagerDelegate?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.makeKeyAndVisible()
@@ -35,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func navigateToMainScreenController() {
         self.window?.rootViewController = self.navigationController
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        if status == .AuthorizedWhenInUse {
+            print("got it")
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

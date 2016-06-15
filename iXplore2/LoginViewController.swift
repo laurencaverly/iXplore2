@@ -38,9 +38,16 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text
         let password = passwordTextField.text
         
+        let msc = MainScreenController(nibName: "MainScreenController", bundle: nil)
+        self.navigationController?.pushViewController(msc, animated: true)
+        
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.navigateToMainScreenController()
+        
         let user = User(username: username, password: password)
         
-        for object in oldUsers as
+//        for object in oldUsers as
     }
     
 

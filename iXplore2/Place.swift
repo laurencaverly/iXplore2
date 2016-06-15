@@ -32,14 +32,14 @@ class Place: MKPointAnnotation {
         aCoder.encodeObject(self.date, forKey: "date")
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
+   // required convenience init?(coder aDecoder: NSCoder) {
         
 //        let email = aDecoder.decodeObjectForKey("email") as? String
 //        let password = aDecoder.decodeObjectForKey("password") as? String
 //        
 //        self.init(email:email, password: password)
         
-    }
+  //  }
     
     class func placeList() -> [Place] {
         

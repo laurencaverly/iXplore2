@@ -36,6 +36,8 @@ class PlacesController {
         
         placesArray.append(newPlace)
         
+        PersistenceManager.saveNSArray(placesArray, fileName: "place.archive")
+        
     }
     
 }
