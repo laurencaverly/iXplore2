@@ -28,8 +28,8 @@ class MainScreenController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.navigationBarHidden = false
         self.mapViewSetup()
         self.tableViewSetup()
-        
-        placeList = Place.placeList()
+//        
+//        placeList = Place.placeList()
         
         self.mapView.delegate = self
         

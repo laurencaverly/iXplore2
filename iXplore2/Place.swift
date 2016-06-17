@@ -9,97 +9,119 @@
 import Foundation
 import MapKit
 
-class Place: MKPointAnnotation {
+class Place: NSObject, MKAnnotation {
     
-//    var title: String?
-//    var coordinate: CLLocationCoordinate2D
+    //Protocol required variables
+    var title: String?
+    var subtitle: String?
+    var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     var imageURL: String
-    var describer: String?
+    var describer: String
     var favorite: Bool
     var date: NSDate?
     
-    override init() {
-//        self.title = ""
-//        self.coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
-        imageURL = ""
-        favorite = false
+//    override init() {
+////        self.title = ""
+////        self.coordinate = CLLocationCoordinate2D(latitude: 30, longitude: 30)
+//        imageURL = ""
+//        favorite = false
+//        date = NSDate()
+//    }
+    
+    required init(title:String?, coordinate:CLLocationCoordinate2D, date:NSDate?, describer:String?) {
+        self.title = title!
+        self.coordinate = coordinate
+        self.date = date
+        self.describer = describer!
+        self.imageURL = ""
+        self.favorite = false
     }
     
     // MARK: - NSCoding
+    
+    
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.title, forKey: "title")
-        aCoder.encodeObject(self.coordinate as! AnyObject, forKey: "coordinate")
+        aCoder.encodeObject(self.coordinate.latitude as Double, forKey: "latitude")
+        aCoder.encodeObject(self.coordinate.longitude as Double, forKey: "longitude")
         aCoder.encodeObject(self.date, forKey: "date")
+        aCoder.encodeObject(self.description, forKey: "describer")
     }
     
-   // required convenience init?(coder aDecoder: NSCoder) {
+    required convenience init?(coder aDecoder: NSCoder) {
         
-//        let email = aDecoder.decodeObjectForKey("email") as? String
-//        let password = aDecoder.decodeObjectForKey("password") as? String
+        let title = aDecoder.decodeObjectForKey("title") as? String
+        let longitude = aDecoder.decodeObjectForKey("longitude") as! Double
+        let latitude = aDecoder.decodeObjectForKey("latitude") as! Double
+        let date = aDecoder.decodeObjectForKey("date") as? NSDate
+        let describer = aDecoder.decodeObjectForKey("describer")  as? String
+        
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        print(coordinate)
+        
+        self.init(title:title, coordinate: coordinate, date: date, describer: describer)
+    }
+    
+    
+//    class func placeList() -> [Place] {
 //        
-//        self.init(email:email, password: password)
-        
-  //  }
-    
-    class func placeList() -> [Place] {
-        
-        let place1 = Place()
-        place1.title = "never@home"
-        place1.coordinate = CLLocationCoordinate2D(latitude: -33.907861, longitude: 18.409094)
-        place1.imageURL = "neverathome.jpg"
-        place1.favorite = true
-        
-        let place2 = Place()
-        place2.title = "Lion's Head"
-        place2.coordinate = CLLocationCoordinate2D(latitude: -33.935021, longitude: 18.389108)
-        place2.imageURL = "LionsHead.jpg"
-        place2.favorite = true
-        
-        let place3 = Place()
-        place3.title = "somewhere else"
-        place3.coordinate = CLLocationCoordinate2D(latitude: -33.907500 , longitude: 18.409500)
-        place3.imageURL = "LCHouse.jpeg"
-        
-        let place4 = Place()
-        place4.title = "Truth Coffee"
-        place4.coordinate = CLLocationCoordinate2D(latitude: -33.917536, longitude: 18.419633)
-        place4.imageURL = "truthcoffee.jpg"
-        place4.favorite = true
-        
-        let place5 = Place()
-        place5.title = "Fork"
-        place5.coordinate = CLLocationCoordinate2D(latitude: -33.922234, longitude: 18.419240)
-        place5.imageURL = "fork.jpg"
-        place5.favorite = true
-        
-        let place6 = Place()
-        place6.title = "Workshop 17"
-        place6.coordinate = CLLocationCoordinate2D(latitude: -33.907095, longitude: 18.418631)
-        place6.imageURL = "workshop17.jpg"
-        
-        let place7 = Place()
-        place7.title = "Old Biscuit Mill"
-        place7.coordinate = CLLocationCoordinate2D(latitude: -33.927540, longitude: 18.457579)
-        place7.imageURL = "oldbiscuitmill.jpg"
-        place7.favorite = true
-        
-        let place8 = Place()
-        place8.title = "Cape Town Stadium"
-        place8.coordinate = CLLocationCoordinate2D(latitude: -33.903578, longitude: 18.411107)
-        place8.imageURL = "capetownstadium.jpg"
-        
-        let place9 = Place()
-        place9.title = "UCT"
-        place9.coordinate = CLLocationCoordinate2D(latitude: -33.957715, longitude: 18.461218)
-        place9.imageURL = "uct.jpg"
-        
-        let place10 = Place()
-        place10.title = "Beerhouse"
-        place10.coordinate = CLLocationCoordinate2D(latitude: -33.925448, longitude: 18.415969)
-        place10.imageURL = "beerhouse.jpg"
-        
-        return [place1, place2, place3, place4, place5, place6, place7, place8, place9, place10]
-    }
+//        let place1 = Place()
+//        place1.title = "never@home"
+//        place1.coordinate = CLLocationCoordinate2D(latitude: -33.907861, longitude: 18.409094)
+//        place1.imageURL = "neverathome.jpg"
+//        place1.favorite = true
+//        
+//        let place2 = Place()
+//        place2.title = "Lion's Head"
+//        place2.coordinate = CLLocationCoordinate2D(latitude: -33.935021, longitude: 18.389108)
+//        place2.imageURL = "LionsHead.jpg"
+//        place2.favorite = true
+//        
+//        let place3 = Place()
+//        place3.title = "somewhere else"
+//        place3.coordinate = CLLocationCoordinate2D(latitude: -33.907500 , longitude: 18.409500)
+//        place3.imageURL = "LCHouse.jpeg"
+//        
+//        let place4 = Place()
+//        place4.title = "Truth Coffee"
+//        place4.coordinate = CLLocationCoordinate2D(latitude: -33.917536, longitude: 18.419633)
+//        place4.imageURL = "truthcoffee.jpg"
+//        place4.favorite = true
+//        
+//        let place5 = Place()
+//        place5.title = "Fork"
+//        place5.coordinate = CLLocationCoordinate2D(latitude: -33.922234, longitude: 18.419240)
+//        place5.imageURL = "fork.jpg"
+//        place5.favorite = true
+//        
+//        let place6 = Place()
+//        place6.title = "Workshop 17"
+//        place6.coordinate = CLLocationCoordinate2D(latitude: -33.907095, longitude: 18.418631)
+//        place6.imageURL = "workshop17.jpg"
+//        
+//        let place7 = Place()
+//        place7.title = "Old Biscuit Mill"
+//        place7.coordinate = CLLocationCoordinate2D(latitude: -33.927540, longitude: 18.457579)
+//        place7.imageURL = "oldbiscuitmill.jpg"
+//        place7.favorite = true
+//        
+//        let place8 = Place()
+//        place8.title = "Cape Town Stadium"
+//        place8.coordinate = CLLocationCoordinate2D(latitude: -33.903578, longitude: 18.411107)
+//        place8.imageURL = "capetownstadium.jpg"
+//        
+//        let place9 = Place()
+//        place9.title = "UCT"
+//        place9.coordinate = CLLocationCoordinate2D(latitude: -33.957715, longitude: 18.461218)
+//        place9.imageURL = "uct.jpg"
+//        
+//        let place10 = Place()
+//        place10.title = "Beerhouse"
+//        place10.coordinate = CLLocationCoordinate2D(latitude: -33.925448, longitude: 18.415969)
+//        place10.imageURL = "beerhouse.jpg"
+//        
+//        return [place1, place2, place3, place4, place5, place6, place7, place8, place9, place10]
+//    }
 }
 
 extension UIImageView   {

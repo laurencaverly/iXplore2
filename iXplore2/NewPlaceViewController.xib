@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPlaceViewController" customModule="iXplore2" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionTextField" destination="CML-SB-x0B" id="4ED-Nj-xSu"/>
+                <outlet property="latitudeTextField" destination="i7C-jn-W2w" id="vg0-ns-OXK"/>
+                <outlet property="longitudeTextField" destination="xKh-9u-n08" id="x9A-wQ-KPK"/>
+                <outlet property="titleTextField" destination="JsR-nP-DZ9" id="bbz-MF-okq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,12 +45,20 @@
                         <rect key="frame" x="82" y="219" width="237" height="30"/>
                     </variation>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Coordinates" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-jn-W2w">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-9u-n08">
                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="82" y="139" width="237" height="30"/>
+                        <rect key="frame" x="219" y="139" width="100" height="30"/>
+                    </variation>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-jn-W2w">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="82" y="139" width="100" height="30"/>
                     </variation>
                 </textField>
             </subviews>
@@ -56,6 +68,7 @@
                     <exclude reference="ftz-Qf-lwr"/>
                     <exclude reference="JsR-nP-DZ9"/>
                     <exclude reference="CML-SB-x0B"/>
+                    <exclude reference="xKh-9u-n08"/>
                     <exclude reference="i7C-jn-W2w"/>
                 </mask>
             </variation>
@@ -64,6 +77,7 @@
                     <include reference="ftz-Qf-lwr"/>
                     <include reference="JsR-nP-DZ9"/>
                     <include reference="CML-SB-x0B"/>
+                    <include reference="xKh-9u-n08"/>
                     <include reference="i7C-jn-W2w"/>
                 </mask>
             </variation>

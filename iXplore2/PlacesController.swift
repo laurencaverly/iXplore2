@@ -25,19 +25,26 @@ class PlacesController {
     
     var placesArray = [Place]()
     
-    func addPlace(title: String, coordinate: CLLocationCoordinate2D, image: String, describer: String, favorite: Bool) {
+    func addPlace(title: String, coordinate: CLLocationCoordinate2D, image: String, describer: String, favorite: Bool, date: NSDate) {
         
-        let newPlace = Place()
+        let newPlace = Place(title: title, coordinate: coordinate, date: date, describer: describer)
         newPlace.title = title
         newPlace.coordinate = coordinate
         newPlace.imageURL = image
         newPlace.describer = describer
         newPlace.favorite = favorite
+        newPlace.date = NSDate()
         
         placesArray.append(newPlace)
         
-        PersistenceManager.saveNSArray(placesArray, fileName: "place.archive")
+        let loadedArray = PersistenceManager.loadNSArray("place.archive")
         
+        print(loadedArray)
+        
+    }
+    
+    private func readPlacesFromMemory() {
+        PersistenceManager.saveNSArray(placesArray, fileName: "place.archive")
     }
     
 }
