@@ -44,7 +44,18 @@ class PlacesController {
     }
     
     private func readPlacesFromMemory() {
+        
         PersistenceManager.saveNSArray(placesArray, fileName: "place.archive")
+        
+    }
+    
+    func getPlaces() -> [Place] {
+        
+        if placesArray[0].title == nil {
+            self.readPlacesFromMemory()
+        } else {
+            
+        }
     }
     
 }
